@@ -25,7 +25,7 @@ function App() {
     <Router>
       <Switch>
         <Container>
-         <Img src={'logo.png'} alt="Logo"/>
+         <Img src={'Logo.png'} alt="Logo"/>
          <Route path ="/"  exact component={Main}/>
          <Route path ="/:cityId" exact component={Chart}/> 
        </Container>

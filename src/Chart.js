@@ -14,7 +14,7 @@ width : 100%;,
 const API_KEY = process.env.REACT_APP_OPENWEATHERMAP_API_KEY;
 
 const Chart = () => {
-  const [cityDetail, setCityDetail] = useState({});
+  const [cityDetail, setCityDetail] = useState([]);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
   const {cityId} = useParams();
@@ -27,10 +27,11 @@ const Chart = () => {
   async function getData(){
     try {
       setLoading(true)
-      let response = await fetch(`http://api.openweathermap.org/data/2.5/forecast?id=${ID}&appid=${API_KEY}&units=metric`);
+      let response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?id=${ID}&appid=${API_KEY}&units=metric`);
       let data = await response.json();
+      console.log(data.list)
       setCityDetail(data.list);
-      return data;
+      // return data;
     }
     catch{
       setError("API ERROR");
