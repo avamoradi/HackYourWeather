@@ -1,6 +1,6 @@
 import React,{useContext} from 'react';
 import styled from 'styled-components';
-import Context from './context';
+import Context from './Context';
 
 
 const PError = styled.p`

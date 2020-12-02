@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import CityList from './cityList';
+import CityList from './CityList';
 import FormSearch from './FormSearch';
 import Error from './Error';
-import Context from './context';
+import Context from './Context';
 
 const API_KEY = process.env.REACT_APP_OPENWEATHERMAP_API_KEY;
 

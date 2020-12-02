@@ -1,7 +1,7 @@
 import React,{useState, useContext} from 'react';
 import Button from './Styles/ButtonStyle';
 import Input from './Styles/Inputstyle';
-import Context from './context';
+import Context from './Context';
 
 
 const FormSearch = () => {

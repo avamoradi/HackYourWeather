@@ -3,7 +3,7 @@ import CardStyle from './Styles/CardStyle';
 import DeleteButton from './Styles/DeleteButton';
 import styled from 'styled-components';
 import H1 from './Styles/Header';
-import Context from './context';
+import Context from './Context';
 import {Link} from 'react-router-dom';
 
 const Div = styled.div`
