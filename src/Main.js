@@ -10,7 +10,7 @@ const Main = () => {
   const cartFromLocalStorage = JSON.parse(localStorage.getItem('cities') || "[]");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState();
-  const [cityList, setCityList] = useState(cartFromLocalStorage);
+  const [cityArray, setCityArray] = useState(cartFromLocalStorage);
 
   async function fetchApi (inputValue){
     try{
@@ -25,7 +25,7 @@ const Main = () => {
        setError("There is an Error")
       } else {
         let findCity = false;
-        findCity = cityList.find((item) => {
+        findCity = cityArray.find((item) => {
           if (item.id === data.id) {
            return true;
           } else {
@@ -33,7 +33,7 @@ const Main = () => {
           }
         });
         if (!findCity) {
-          setCityList([...cityList, data]);
+          setCityArray([...cityArray, data]);
         }
       }
     }
@@ -47,15 +47,15 @@ const Main = () => {
   }
 
   useEffect(() => {
-    localStorage.setItem('cities',JSON.stringify(cityList))
-  },[cityList]);
+    localStorage.setItem('cities',JSON.stringify(cityArray))
+  },[cityArray]);
 
   const handleDelete = (id) => {
-    const newCityList = cityList.filter((item) => item.id !== id);
-    setCityList(newCityList)
+    const newCityList = cityArray.filter((item) => item.id !== id);
+    setCityArray(newCityList)
   }
   return (
-    <Context.Provider value = {{fetchApi, error, loading, setLoading, handleDelete, cityList, setCityList}}>
+    <Context.Provider value = {{fetchApi, error, loading, setLoading, handleDelete, cityArray, setCityArray}}>
     <FormSearch />
     {error && <Error/>}
     <CityList/>

@@ -16,13 +16,13 @@ background-color:#bdbab8;
 border-radius:50%;`;
 
 const CityList = () => {
-  const {cityList} = useContext(Context);
+  const {cityArray} = useContext(Context);
   const {loading} = useContext(Context);
   const {handleDelete} = useContext(Context);
 
   return(
     <>
-      {Object.keys(cityList).length > 0 && cityList.map((city) => (
+      {Object.keys(cityArray).length > 0 && cityArray.map((city) => (
        <RenderCard city={city} />
       ))}
     </>

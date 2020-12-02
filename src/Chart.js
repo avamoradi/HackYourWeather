@@ -29,9 +29,7 @@ const Chart = () => {
       setLoading(true)
       let response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?id=${ID}&appid=${API_KEY}&units=metric`);
       let data = await response.json();
-      console.log(data.list)
       setCityDetail(data.list);
-      // return data;
     }
     catch{
       setError("API ERROR");
@@ -41,7 +39,6 @@ const Chart = () => {
      setLoading(false);
     }
   }
-
   return (
     <div>
       {error ? <p>{error}</p> : 
